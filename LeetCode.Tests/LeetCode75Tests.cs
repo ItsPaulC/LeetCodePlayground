@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Tests;
+﻿using FluentAssertions;
+
+namespace LeetCode.Tests;
 
 public class LeetCode75Tests
 {
@@ -46,4 +48,22 @@ public class LeetCode75Tests
     }
 
     #endregion MergeAlternately1
+
+    #region Greatest Common Divisor of Strings
+
+    [Theory]
+    [InlineData("ABCABC", "ABC", "ABC")]
+    [InlineData("ABABAB", "ABAB", "AB")]
+    [InlineData("LEET", "CODE", "")]
+    public void GcdOfStrings(string str1, string str2, string expected)
+    {
+        // Act
+        string actual = _leetCode75.GcdOfStrings(str1, str2);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    #endregion Greatest Common Divisor of Strings
+
 }
