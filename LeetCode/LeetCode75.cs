@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net.NetworkInformation;
+﻿using System.Net.NetworkInformation;
 using System.Text;
 
 namespace LeetCode;
@@ -90,4 +89,22 @@ public class LeetCode75
     }
 
     #endregion Greatest Common Divisor of Strings
+
+    #region Kids with Candies
+
+    public IList<bool> KidsWithCandies1(int[] candies, int extraCandies)
+    {
+        int maxCandies = candies.Max();
+        List<bool> result = new List<bool>(candies.Length);
+
+
+        foreach (int candyCount in candies)
+        {
+            result.Add(candyCount + extraCandies >= maxCandies);
+        }
+
+        return result;
+    }
+
+    #endregion Kids with Candies
 }

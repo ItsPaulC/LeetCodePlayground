@@ -34,4 +34,10 @@ public class LeetCode75Benchamarks
     {
         return _leetCode75.MergeAlternately3(_word1, _word2);
     }
+
+    [Benchmark]
+    public IList<bool> BenchmarkKidsWithCandies1()
+    {
+        return _leetCode75.KidsWithCandies1([2, 3, 5, 1, 3], 3);
+    }
 }
